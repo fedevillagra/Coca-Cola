@@ -116,7 +116,7 @@ export default function Example() {
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
               En 1942 la marca se dio cuenta de que muchos trataban de ser como ellos, pero decidieron sacar ventaja 
-              de la situación aclarándole a sus consumidores que "La única cosa como Coca Cola, es Coca Cola".
+              de la situación aclarándole a sus consumidores que &quot;La única cosa como Coca Cola, es Coca Cola&quot;.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
