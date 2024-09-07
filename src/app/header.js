@@ -25,7 +25,7 @@ export default function Example() {
           </svg>
 
           <Popover>
-            <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
+            <div className="relative pt-6 px-4 sm:px-6 lg:px-8 apear-image1">
               <nav className="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
                 <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                   <div className="flex items-center justify-between w-full md:w-auto">
@@ -109,7 +109,7 @@ export default function Example() {
           </Popover>
 
           <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
+            <div className="sm:text-center lg:text-left apear-image2">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block xl:inline">La única cosa como</span>{' '}
                 <span className="block text-red-600 xl:inline">Coca Cola, es Coca Cola</span>{' '}
@@ -142,7 +142,7 @@ export default function Example() {
       </div>
       <div id='header'className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full apear-image3"
           src="coke-summer-1800x600.webp"
           alt="header image"
         />

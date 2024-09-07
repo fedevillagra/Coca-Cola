@@ -36,6 +36,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Animación aparición al principio */
+
+.apear-image1{
+  animation: linear apear both;
+  animation-duration: 1s;
+}
+.apear-image2{
+  animation: linear apear both;
+  animation-delay: .7s;
+  animation-duration: 1s;
+}
+.apear-image3{
+  animation: linear apear both;
+  animation-delay: 1.4s;
+  animation-duration: 1s;
+}
+
+@keyframes apear {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 /* Animación simple para imagenes */
 .revealing-image{
   /* Create View Timeline */
