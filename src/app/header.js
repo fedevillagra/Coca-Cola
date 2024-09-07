@@ -76,7 +76,7 @@ export default function Example() {
                       <img
                         className="h-8 w-auto"
                         src="Coke-company-logo-black.svg"
-                        alt=""
+                        alt="Coke-company-logo-black.svg"
                       />
                     </div>
                     <div className="-mr-2">

@@ -90,7 +90,7 @@ export default function Overview() {
               <div className="absolute inset-0">
                 <img
                   src="cocacola-christmas-2.avif"
-                  alt=""
+                  alt="cocacola-christmas-2.avif"
                   className="h-full w-full object-cover object-center"
                 />
               </div>

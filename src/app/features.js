@@ -95,7 +95,7 @@ export default function Features() {
             <div className="absolute inset-0 overflow-hidden">
               <img
                 src="cocacola-christmas-2.avif"
-                alt=""
+                alt="cocacola-christmas-2.avif"
                 className="w-full h-full object-center object-cover"
               />
             </div>
@@ -114,7 +114,7 @@ export default function Features() {
               <div className="absolute inset-0 overflow-hidden">
                 <img
                   src="cocacola-christmas-2.avif"
-                  alt=""
+                  alt="cocacola-christmas-2.avif"
                   className="w-full h-full object-center object-cover"
                 />
               </div>
