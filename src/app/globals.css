@@ -31,3 +31,266 @@ body {
     text-wrap: balance;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animación simple para imagenes */
+.revealing-image{
+  /* Create View Timeline */
+	view-timeline-name: --revealing-image;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear reveal both;
+	animation-timeline: --revealing-image;
+
+	/* Tweak range when effect should run*/
+	animation-range: entry 5% cover 30%;
+}
+
+@keyframes reveal {
+	from {
+		opacity: 0;
+		clip-path: inset(45% 20% 45% 20%);
+	}
+	to {
+		opacity: 1;
+		clip-path: inset(0% 0% 0% 0%);
+	}
+}
+
+/* Animación para imagen del header que se acuesta (solo para ordenador) */
+@media (min-width: 1024px) {
+  @keyframes adjust-image {
+    80% {
+      opacity: .1;
+    }
+    to {
+      translate: -50% -60% 0;
+      opacity: 0;
+      rotate: -6deg;
+    }
+  }
+  
+  #header {
+    view-timeline: --header-vtl;
+  }
+  #header {
+    position: fixed;
+    animation: adjust-image linear both;
+    animation-timeline: --header-vtl;
+    animation-range: exit;
+  }
+}
+
+/* Animación gira imagenes */
+.fade-image{
+	view-timeline-name: --fade-image;
+	view-timeline-axis: block;
+
+  animation: fade ease both;
+	animation-timeline: --fade-image;
+
+	animation-range: entry 0% cover 100%;
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    transform: perspective(1e3px) rotateY(90deg) rotateX(-5deg) rotate(10deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: perspective(none) rotateY(-0deg) rotateX(0deg) rotate(0deg);
+  }
+  70% {
+    opacity: 1;
+    transform: perspective(1e3px) rotateY(-30deg) rotateX(5deg) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1e3px) rotateY(-90deg) rotateX(10deg) rotate(10deg);
+  }
+}
+
+/* Card hover 
+.card{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 350px;
+  height: 350px;
+  border-radius:20px;
+  transition: .5s;
+  transition-delay: .5s;
+}
+.card:hover{
+  width: 600px;
+  transition-delay: .5s;
+}
+.card .circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --clr: #f40103
+}
+.card .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #191919;
+  border: 8px solid var(--clr);
+  filter: drop shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+  transition: .5s, background .5s;
+  transition-delay: .75s,1s;
+}
+.card:hover .circle::before{
+  transition-delay: .5s;
+  width: 100%;
+  height: 100%;
+  border-radius: 20%;
+  background: var(--clr);
+}
+.card .circle .logo{
+position: relative;
+width: 250px;
+transition: .5s;
+transition-delay: .5s;
+}
+.card:hover .circle .logo{
+transform: scale(0);
+transition-delay: 0s;
+}
+.card .product_img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0) rotate(315deg);
+  height: 300px;
+  transition: .5s ease-in-out;
+}
+.card:hover .product_img{
+  transition-delay: .75s;
+  top: 25%;
+  left: 72%;
+  transform: translate(-50%,-50%) scale(1) rotate(15deg);
+  height: 500px;
+}
+.card .content{
+  position: absolute;
+  width: 50%;
+  left: 20%;
+  padding-left: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: .5s;
+  visibility: hidden;
+}
+.card:hover .content{
+  transition-delay: .75s;
+  opacity: 1;
+  visibility: visible;
+  left: 20px;
+}
+.card .content h2{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+.card .content p{
+  color: #fff;
+}
+.card .content a{
+  position: relative;
+  color: #111;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.card .content a:hover{
+  opacity: .75;
+}
+
+/* hover efect rosalia */
+article{
+  position: relative;
+  transition: all .3s ease;
+}
+article img:first-child{
+box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
+border-radius: 10px;
+object-fit: cover;
+width: 100%;
+}
+article img:last-child{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: translateY(25%);
+  transition: .3s ease;
+  opacity: 0;
+}
+article:hover{
+  transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+}
+article::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-image: 
+  linear-gradient(
+    to bottom,
+    transparent 10%,
+    rgba(0,0,0,0.5) 30%,
+    rgba(0,0,0) 95%
+  );
+  opacity: 0;
+  transition: .3s ease;
+}
+article:hover::before{
+  opacity: 1;
+}
+article:hover img:last-child{
+  opacity: 1;
+  transform: perspective(220px) rotateX(-10deg) translateY(10%);
+}
+
+/* fondo de diario */
+#paper {
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+              url("/vintage-newspaper-1rfs3l4ozkitx6g9.jpg");
+  background-size: cover;
+}
+.sombrafuerte{
+  box-shadow: 0 10px 30px 0 rgb(0 0 0 / 0.5), 0 10px 20px -5px rgb(0 0 0 / 0.4);
+}
